@@ -15,7 +15,8 @@ I will organize by Days, as they are presented on the AoC website.
 
 ## Days
 
-* [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1)
+* [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1) ⭐️ ⭐️
+* [Day 2: I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2)
 
 
 ## Setup

@@ -16,7 +16,7 @@ I will organize by Days, as they are presented on the AoC website.
 ## Days
 
 * [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1) ⭐️ ⭐️
-* [Day 2: I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2)
+* [Day 2: I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) ⭐️ ⭐️
 * Day 3: Perfectly Spherical Houses in a Vacuum
 * Day 4: The Ideal Stocking Stuffer
 * Day 5: Doesn't He Have Intern-Elves For This?

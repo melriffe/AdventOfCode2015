@@ -8,47 +8,47 @@ RSpec.describe 'Day 1: Not Quite Lisp' do
 
   context 'Examples' do
     describe '#floor' do
-      it 'returns floor 0 for "(())"' do
+      it 'returns 0 for "(())"' do
         model = Day01.calculate '(())'
         expect(model.floor).to eq 0
       end
 
-      it 'returns floor 0 for "()()"' do
+      it 'returns 0 for "()()"' do
         model = Day01.calculate '()()'
         expect(model.floor).to eq 0
       end
 
-      it 'returns floor 3 for "((("' do
+      it 'returns 3 for "((("' do
         model = Day01.calculate '((('
         expect(model.floor).to eq 3
       end
 
-      it 'returns floor 3 for "(()(()("' do
+      it 'returns 3 for "(()(()("' do
         model = Day01.calculate '(()(()('
         expect(model.floor).to eq 3
       end
 
-      it 'returns floor 3 for "))((((("' do
+      it 'returns 3 for "))((((("' do
         model = Day01.calculate '))((((('
         expect(model.floor).to eq 3
       end
 
-      it 'returns floor -1 for "())"' do
+      it 'returns -1 for "())"' do
         model = Day01.calculate '())'
         expect(model.floor).to eq(-1)
       end
 
-      it 'returns floor -1 for "))("' do
+      it 'returns -1 for "))("' do
         model = Day01.calculate '))('
         expect(model.floor).to eq(-1)
       end
 
-      it 'returns floor -3 for ")))"' do
+      it 'returns -3 for ")))"' do
         model = Day01.calculate ')))'
         expect(model.floor).to eq(-3)
       end
 
-      it 'returns floor -3 for ")())())"' do
+      it 'returns -3 for ")())())"' do
         model = Day01.calculate ')())())'
         expect(model.floor).to eq(-3)
       end

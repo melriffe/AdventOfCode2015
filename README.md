@@ -19,7 +19,7 @@ I will organize by Days, as they are presented on the AoC website.
 * [Day 2: I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) ⭐️ ⭐️
 * [Day 3: Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) ⭐️ ⭐️
 * [Day 4: The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) ⭐️ ⭐️
-* Day 5: Doesn't He Have Intern-Elves For This?
+* [Day 5: Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) ⭐️
 * Day 6: Probably a Fire Hazard
 * Day 7: Some Assembly Required
 * Day 8: Matchsticks

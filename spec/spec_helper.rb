@@ -16,6 +16,8 @@ RSpec.configure do |config|
   # or :focus metadata
   config.filter_run_when_matching :focus
 
+  config.filter_run_excluding slow: true
+
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end

@@ -7,14 +7,25 @@
 class Day03
   attr_accessor :data
 
-  def self.calculate data
-    new(data).calculate
+  def self.robo_calculate data
+    new(data, [GiftDeliverer.new, GiftDeliverer.new]).calculate
   end
 
-  def initialize data
+  def self.calculate data
+    new(data, [GiftDeliverer.new]).calculate
+  end
+
+  def initialize data, workers
     self.data = data
-    self.houses = Hash.new { |h, k| h[k] = 0 }
-    self.x = self.y = 0
+    self.workers = workers
+  end
+
+  def santa
+    workers.first
+  end
+
+  def robo_santa
+    workers.last
   end
 
   ##
@@ -27,33 +38,90 @@ class Day03
   # his new location.
   #
   def calculate
-    houses[current_location] += 1
+    workers.map(&:start)
+    skip_skipping = workers.one?
 
-    data.chars.each do |char|
+    data.chars.each_with_index do |char, index|
+      worker = if skip_skipping
+                 santa
+               else
+                 index.even? ? santa : robo_santa
+               end
+
       case char
       when '^'
-        self.y += 1
+        worker.north
       when 'v'
-        self.y -= 1
+        worker.south
       when '>'
-        self.x += 1
+        worker.east
       when '<'
-        self.x -= 1
+        worker.west
       end
-      houses[current_location] += 1
     end
     self
+  end
+
+  def houses_visited
+    locations = []
+    workers.collect { |worker| locations += worker.locations }
+    locations.uniq.size
+  end
+
+  private
+
+  attr_accessor :workers
+end
+
+##
+# Represent Someone that delivers gifts to houses.
+class GiftDeliverer
+  def initialize
+    self.houses = Hash.new { |h, k| h[k] = 0 }
+    self.x = self.y = 0
+  end
+
+  def start
+    houses[current_location] += 1
+  end
+
+  def locations
+    houses.keys
   end
 
   def houses_visited
     houses.keys.size
   end
 
+  def north
+    self.y += 1
+    leave_present
+  end
+
+  def south
+    self.y -= 1
+    leave_present
+  end
+
+  def east
+    self.x += 1
+    leave_present
+  end
+
+  def west
+    self.x -= 1
+    leave_present
+  end
+
+  def current_location
+    "#{x}#{y}"
+  end
+
   private
 
   attr_accessor :houses, :x, :y
 
-  def current_location
-    "#{x}#{y}"
+  def leave_present
+    houses[current_location] += 1
   end
 end

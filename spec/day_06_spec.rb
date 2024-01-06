@@ -23,6 +23,18 @@ RSpec.describe 'Day 6: Probably a Fire Hazard' do
         expect(model.lights_on).to be_zero
       end
     end
+
+    describe '#brightness' do
+      it 'returns 1 for "turn on 0,0 through 0,0"' do
+        model = Day06.calculate ['turn on 0,0 through 0,0']
+        expect(model.brightness).to eq 1
+      end
+
+      it 'returns 2_000_000 for "toggle 0,0 through 999,999"', :slow do
+        model = Day06.calculate ['toggle 0,0 through 999,999']
+        expect(model.brightness).to eq 2_000_000
+      end
+    end
   end
 
   context 'Exercises' do
@@ -30,6 +42,10 @@ RSpec.describe 'Day 6: Probably a Fire Hazard' do
 
     it 'finds number of lit lights', :slow do
       expect(model.lights_on).to eq 569_999
+    end
+
+    it 'finds total brightness', :slow do
+      expect(model.brightness).to eq 17_836_115
     end
   end
 end

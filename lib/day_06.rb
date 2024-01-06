@@ -64,6 +64,10 @@ class Day06
     grid.lights_on
   end
 
+  def brightness
+    grid.brightness
+  end
+
   private
 
   attr_accessor :grid
@@ -91,12 +95,16 @@ class GridOfLights
     rect.coordinates.each do |location|
       light_harness[location] = Light.new unless light_harness.key? location
       light_harness[location].send command
-      light_harness.delete(location) unless light_harness[location].lit?
+      light_harness.delete(location) unless light_harness[location].lit? || light_harness[location].brightness.positive?
     end
   end
 
   def lights_on
-    light_harness.keys.size
+    light_harness.values.count(&:lit?)
+  end
+
+  def brightness
+    light_harness.values.sum(&:brightness)
   end
 
   private
@@ -163,8 +171,11 @@ end
 # A simple light used in the grid
 #
 class Light
+  attr_reader :brightness
+
   def initialize
     self.lit = false
+    self.brightness = 0
   end
 
   def lit?
@@ -173,17 +184,21 @@ class Light
 
   def on
     self.lit = true
+    self.brightness += 1
   end
 
   def off
     self.lit = false
+    self.brightness -= 1 unless brightness.zero?
   end
 
   def toggle
     self.lit = !lit
+    self.brightness += 2
   end
 
   private
 
   attr_accessor :lit
+  attr_writer :brightness
 end

@@ -1,11 +1,6 @@
-# AdventOfCode2015
+# Advent Of Code 2015
 
 Another foray into the [Advent Of Code](https://adventofcode.com/2015) exercises
-
-----
-
-## Advent Of Code
-
 
 ## Language of Solutions
 
@@ -20,7 +15,7 @@ I will organize by Days, as they are presented on the AoC website.
 * [Day 3: Perfectly Spherical Houses in a Vacuum](https://adventofcode.com/2015/day/3) ⭐️ ⭐️
 * [Day 4: The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) ⭐️ ⭐️
 * [Day 5: Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) ⭐️ ⭐️
-* Day 6: Probably a Fire Hazard
+* [Day 6: Probably a Fire Hazard](https://adventofcode.com/2015/day/6)
 * Day 7: Some Assembly Required
 * Day 8: Matchsticks
 * Day 9: All in a Single Night
@@ -41,7 +36,6 @@ I will organize by Days, as they are presented on the AoC website.
 * Day 24: It Hangs in the Balance
 * Day 25: Let It Snow
 
-
 ## Setup
 
 I created this project/repository manually. I modeled it after my 2020 project. I don't remember how I created the structure of it, so I just mimicked the files and directories.
@@ -54,7 +48,7 @@ $ rake
 
 ### Structure
 
-I will be using the structure I used in my 2020 AOC project where I will have a `Day` class that will implement `#exercise1` (which is the test, when it passes, that will unlock the next exercise) and `#exercise2`.
+I used my AOC 2020 Implementation as inspiration. I have `Day` classes but I elected to use them in a more OO manner, where I query the 'model' for the answers requested by AOC. I've elected to have a `calculate` class method that is the primary interface to the Day's challenges. Where appropriate I've implemented Helper classes; they're tested separately.
 
 The Test Specs will have an Examples context and a Exercises context.
 

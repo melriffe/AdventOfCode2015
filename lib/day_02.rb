@@ -22,9 +22,9 @@ class Day02
   # NOTE: The incoming 'data' is a series of "formulas": '2x3x4'
   def calculate
     data.each do |datum|
-      rectangle = Rectangle.new datum.split('x')
-      self.wrapping_paper_order += rectangle.wrapping_paper_required
-      self.ribbon_order += rectangle.ribbon_required
+      gift = Present.new datum.split('x')
+      self.wrapping_paper_order += gift.wrapping_paper_required
+      self.ribbon_order += gift.ribbon_required
     end
     self
   end
@@ -32,7 +32,7 @@ end
 
 ##
 # Represent the Present that is to be wrapped by Santa's Elves.
-class Rectangle
+class Present
   def initialize dimensions
     self.height = dimensions.pop.to_i
     self.width = dimensions.pop.to_i

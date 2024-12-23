@@ -16,7 +16,7 @@ I will organize by Days, as they are presented on the AoC website.
 * [Day 4: The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) ⭐️ ⭐️
 * [Day 5: Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) ⭐️ ⭐️
 * [Day 6: Probably a Fire Hazard](https://adventofcode.com/2015/day/6) ⭐️ ⭐️
-* Day 7: Some Assembly Required
+* [Day 7: Some Assembly Required](https://adventofcode.com/2015/day/7)
 * Day 8: Matchsticks
 * Day 9: All in a Single Night
 * Day 10: Elves Look, Elves Say
@@ -54,3 +54,20 @@ The Test Specs will have an Examples context and a Exercises context.
 
 The Fixtures directory will contain the input data for each exercise.
 
+
+
+---
+
+& bitwise AND
+| bitwise OR
+<< 2 - lfshit 2
+<< - 2 - rshift 2
+^ 65535 - bitwise NOT
+
+the 'booklet' is a series of instructions, where each instruction can refer to
+other variables.
+
+
+"lf AND lq -> ls" means: assign the result of the bitwise AND of `lf` and `lq` to variable `ls`
+
+the arrow (->) means assign to variable _x_
